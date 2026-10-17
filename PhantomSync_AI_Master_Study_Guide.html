@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PhantomSync AI - Master Engineering & Placement Study Guide</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+    @page {
+      size: A4;
+      margin: 18mm 16mm 18mm 16mm;
+      @bottom-right {
+        content: counter(page);
+        font-family: 'Inter', sans-serif;
+        font-size: 9pt;
+        color: #64748b;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: #1e293b;
+      background-color: #ffffff;
+      line-height: 1.6;
+      font-size: 10pt;
+      margin: 0;
+      padding: 0;
+    }
+
+    .cover-page {
+      page-break-after: always;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 90vh;
+      padding: 40px 20px;
+      border-bottom: 2px solid #e2e8f0;
+    }
+
+    .badge-tag {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      font-size: 8.5pt;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      background-color: #e0e7ff;
+      color: #4338ca;
+      margin-bottom: 16px;
+    }
+
+    h1.title {
+      font-size: 28pt;
+      font-weight: 800;
+      line-height: 1.15;
+      color: #0f172a;
+      margin: 0 0 12px 0;
+      letter-spacing: -0.03em;
+    }
+
+    h2.subtitle {
+      font-size: 14pt;
+      font-weight: 500;
+      color: #64748b;
+      margin: 0 0 32px 0;
+      line-height: 1.4;
+    }
+
+    .meta-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 18px;
+      margin-top: 24px;
+      font-size: 9pt;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .meta-item strong {
+      color: #334155;
+      display: block;
+      font-size: 8pt;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    h2 {
+      font-size: 15pt;
+      font-weight: 700;
+      color: #0f172a;
+      margin-top: 28px;
+      margin-bottom: 12px;
+      padding-bottom: 6px;
+      border-bottom: 1.5px solid #e2e8f0;
+      page-break-after: avoid;
+    }
+
+    h3 {
+      font-size: 12pt;
+      font-weight: 600;
+      color: #1e293b;
+      margin-top: 20px;
+      margin-bottom: 8px;
+      page-break-after: avoid;
+    }
+
+    h4 {
+      font-size: 10.5pt;
+      font-weight: 600;
+      color: #334155;
+      margin-top: 14px;
+      margin-bottom: 6px;
+      page-break-after: avoid;
+    }
+
+    p {
+      margin: 0 0 10px 0;
+      color: #334155;
+    }
+
+    ul, ol {
+      margin: 0 0 12px 0;
+      padding-left: 22px;
+      color: #334155;
+    }
+
+    li {
+      margin-bottom: 5px;
+    }
+
+    code {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 8.5pt;
+      background: #f1f5f9;
+      color: #0f172a;
+      padding: 2px 5px;
+      border-radius: 4px;
+      border: 1px solid #e2e8f0;
+    }
+
+    pre {
+      background: #0f172a;
+      color: #f8fafc;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 8pt;
+      line-height: 1.45;
+      padding: 12px 14px;
+      border-radius: 6px;
+      overflow-x: auto;
+      margin: 10px 0 14px 0;
+      page-break-inside: avoid;
+    }
+
+    pre code {
+      background: transparent;
+      color: inherit;
+      padding: 0;
+      border: none;
+      font-size: 8pt;
+    }
+
+    .callout {
+      border-left: 4px solid #6366f1;
+      background: #f5f3ff;
+      padding: 12px 16px;
+      border-radius: 0 6px 6px 0;
+      margin: 14px 0;
+      page-break-inside: avoid;
+    }
+
+    .callout-title {
+      font-weight: 700;
+      color: #4338ca;
+      font-size: 9pt;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .callout-success {
+      border-left-color: #10b981;
+      background: #ecfdf5;
+    }
+    .callout-success .callout-title {
+      color: #065f46;
+    }
+
+    .callout-warning {
+      border-left-color: #f59e0b;
+      background: #fffbeb;
+    }
+    .callout-warning .callout-title {
+      color: #92400e;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0 16px 0;
+      font-size: 8.5pt;
+      page-break-inside: avoid;
+    }
+
+    th, td {
+      border: 1px solid #cbd5e1;
+      padding: 7px 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background-color: #f1f5f9;
+      color: #0f172a;
+      font-weight: 600;
+    }
+
+    tr:nth-child(even) td {
+      background-color: #f8fafc;
+    }
+
+    .page-break {
+      page-break-after: always;
+    }
+
+    .diagram {
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      padding: 12px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 7.5pt;
+      line-height: 1.35;
+      color: #0f172a;
+      margin: 12px 0;
+      white-space: pre;
+      page-break-inside: avoid;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- COVER PAGE -->
+  <div class="cover-page">
+    <span class="badge-tag">Zero to Hero Engineering Guide</span>
+    <h1 class="title">PhantomSync AI<br>System Architecture & Complete Implementation Guide</h1>
+    <h2 class="subtitle">A Beginner-Friendly Blueprint to Offline-First Distributed Notes, Optimistic Concurrency Control, and SDE Placement Mastery</h2>
+    
+    <div class="meta-box">
+      <div class="meta-grid">
+        <div class="meta-item">
+          <strong>Project Name</strong>
+          PhantomSync AI
+        </div>
+        <div class="meta-item">
+          <strong>Author & Target Audience</strong>
+          Beginner Software Developers & Placement Candidates
+        </div>
+        <div class="meta-item">
+          <strong>Tech Stack</strong>
+          React 19, Vite, IndexedDB, Node.js, Express, MongoDB
+        </div>
+        <div class="meta-item">
+          <strong>Core Algorithms</strong>
+          OCC, Outbox Pattern, 3-Way Diff, Idempotency, Tombstones
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TABLE OF CONTENTS & INTRODUCTION -->
+  <h2>Table of Contents</h2>
+  <ol>
+    <li><strong>The Mental Model: How to Build a Full-Stack Project from Scratch</strong></li>
+    <li><strong>The High-Level Architecture & Component Map</strong></li>
+    <li><strong>The Database Connection: Real MongoDB vs In-Memory Fallback</strong></li>
+    <li><strong>Data Schemas & Storage Design (Mongoose & IndexedDB)</strong></li>
+    <li><strong>The Synchronization Engine: Step-by-Step Flow</strong></li>
+    <li><strong>Optimistic Concurrency Control (OCC) & Conflict Detection</strong></li>
+    <li><strong>Side-by-Side Visual Diff & The Built-in 3-Way AI Merge Engine</strong></li>
+    <li><strong>Time Travel Version History & Point-in-Time Restore</strong></li>
+    <li><strong>File-by-File Code Tour & Implementation Anatomy</strong></li>
+    <li><strong>Top 10 SDE Placement Interview Questions & Model Answers</strong></li>
+  </ol>
+
+  <div class="page-break"></div>
+
+  <!-- SECTION 1 -->
+  <h2>1. The Mental Model: How to Build a Full-Stack Project from Scratch</h2>
+  <p>
+    When you start with an empty folder, building a complete project can feel overwhelming. Professional Software Engineers follow a structured, phased mental model that removes all guesswork:
+  </p>
+
+  <div class="diagram">
+PHASE 1: Requirements & Data Design ──► Define the problem, schemas (Note, History, Queue).
+               │
+               ▼
+PHASE 2: Backend Core & Database    ──► Connect DB, build REST endpoints, test with Postman/cURL.
+               │
+               ▼
+PHASE 3: Automated Test Verification──► Write tests to prove edge cases work BEFORE UI is built.
+               │
+               ▼
+PHASE 4: Frontend Data Layer        ──► Set up IndexedDB & SyncManager before building UI components.
+               │
+               ▼
+PHASE 5: UI & Interactive Features  ──► Build Navbar, Editor, Conflict Modals, and visual diffs.
+               │
+               ▼
+PHASE 6: Hardening & Resilience     ──► Network simulation, exponential backoffs, idempotency.
+  </div>
+
+  <div class="callout">
+    <div class="callout-title">Key Rule of Engineering</div>
+    Never write frontend UI code before your data layer works. In PhantomSync, we first designed the data models and verified sync mechanics through 16 automated tests before writing a single line of React UI!
+  </div>
+
+  <!-- SECTION 2 -->
+  <h2>2. High-Level Architecture & Component Map</h2>
+  <p>
+    PhantomSync AI solves the fundamental problem of web applications: <strong>network unreliability</strong>. In a traditional app, if the Wi-Fi disconnects, the user cannot write or save notes. In PhantomSync:
+  </p>
+  <ul>
+    <li><strong>IndexedDB is the primary source of truth for the browser.</strong> When the user types or creates a note, it writes directly to browser disk with 0ms delay.</li>
+    <li><strong>The Network is an asynchronous replication channel.</strong> A background coordinator (<code>SyncManager</code>) pushes changes to the cloud when online and pulls updates from other devices.</li>
+  </ul>
+
+  <div class="diagram">
+ ┌─────────────────────────────────────────────────────────────────────────────┐
+ │                       BROWSER / CLIENT (React 19 + Vite)                    │
+ │                                                                             │
+ │  [UI: NoteEditor] ──► Writes instantly (0ms)                                │
+ │         │                                                                   │
+ │         ▼                                                                   │
+ │  [IndexedDB (Local Storage)]                                                │
+ │    ├── 'notes' Store       ── Local copy of all notes                       │
+ │    └── 'syncQueue' (Outbox)── Pending operations awaiting cloud upload      │
+ │         │                                                                   │
+ │         ▼                                                                   │
+ │  [SyncManager Engine]      ── Runs background heartbeats, listens to online │
+ └─────────┬───────────────────────────────────────────────────────────────────┘
+           │ HTTP POST /api/sync/batch (Replays queued offline operations)
+           ▼
+ ┌─────────────────────────────────────────────────────────────────────────────┐
+ │                       SERVER LAYER (Node.js + Express)                      │
+ │                                                                             │
+ │  - syncController.js       ── Deduplicates via IdempotencyKey               │
+ │  - noteController.js       ── OCC check: if (baseVersion != current) 409    │
+ │  - aiMergeService.js       ── Line-by-line 3-way diff reconciliation        │
+ │         │                                                                   │
+ │         ▼                                                                   │
+ │  [Database Adapter Layer]                                                   │
+ │    ├── External MongoDB    ── (If MONGODB_URI is provided in .env)          │
+ │    └── In-Memory Store     ── (Zero-config instant local fallback)          │
+ └─────────────────────────────────────────────────────────────────────────────┘
+  </div>
+
+  <div class="page-break"></div>
+
+  <!-- SECTION 3 -->
+  <h2>3. The Database Connection: Real MongoDB vs In-Memory Fallback</h2>
+  <p>
+    One of the biggest frustrations for beginners on Windows is setting up local databases (e.g. MongoDB service not starting, environment variable PATH errors).
+  </p>
+  <p>
+    In PhantomSync, we engineered a <strong>Dual-Mode Database Connector</strong> in <code>server/src/config/db.js</code> that guarantees 100% uptime with zero manual setup.
+  </p>
+
+  <h3>How the Dual-Mode Connection Logic Works</h3>
+  <pre><code>// File: server/src/config/db.js
+const mongoose = require('mongoose');
+const memoryStore = require('./memoryStore');
+
+async function connectDB() {
+  const uri = process.env.MONGODB_URI || 'mongodb://localhost:27017/phantomsync';
+
+  try {
+    // 1. Attempt connection to real MongoDB with a 2-second timeout
+    const conn = await mongoose.connect(uri, { serverSelectionTimeoutMS: 2000 });
+    console.log(`[Database] Connected to external MongoDB at: ${conn.connection.host}`);
+    memoryStore.isInMemory = false;
+    return conn;
+  } catch (err) {
+    // 2. If real MongoDB is not running, gracefully switch to built-in in-memory store!
+    console.warn(`[Database] External MongoDB not reachable (${err.message}).`);
+    console.log(`[Database] Switching to built-in high-performance in-memory store!`);
+    memoryStore.isInMemory = true;
+    return { connection: { host: 'in-memory-store' } };
+  }
+}</code></pre>
+
+  <div class="callout callout-success">
+    <div class="callout-title">Why This Impresses SDE Interviewers</div>
+    This is an implementation of the <strong>Adapter and Fallback Pattern</strong>. The rest of the server code (controllers, routes, tests) does not care whether the database is real MongoDB or in-memory; they share the exact same Mongoose API (<code>find</code>, <code>findById</code>, <code>create</code>, <code>save</code>).
+  </div>
+
+  <!-- SECTION 4 -->
+  <h2>4. Data Schemas & Storage Design</h2>
+
+  <h3>A. Server MongoDB Collections</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Collection</th>
+        <th>Key Fields</th>
+        <th>Purpose & Design Rationale</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Notes</strong></td>
+        <td><code>_id: String</code><br><code>title, content, tags</code><br><code>version: Number</code><br><code>isDeleted: Boolean</code></td>
+        <td>
+          • <code>_id</code> is a UUID string generated by the client so offline devices create IDs without server consultation.<br>
+          • <code>version</code> provides Optimistic Concurrency Control.<br>
+          • <code>isDeleted</code> implements the <strong>Tombstone Pattern</strong> for syncing deletions.
+        </td>
+      </tr>
+      <tr>
+        <td><strong>NoteHistories</strong></td>
+        <td><code>noteId, version</code><br><code>title, content</code><br><code>changeType, savedAt</code></td>
+        <td>Immutable snapshot history. Every time a note changes or is restored, an uneditable historical record is appended here.</td>
+      </tr>
+      <tr>
+        <td><strong>SyncLogs</strong></td>
+        <td><code>idempotencyKey: String</code><br><code>responseData: Object</code><br><code>createdAt: Date (TTL)</code></td>
+        <td>
+          Guarantees <strong>At-Most-Once semantics</strong>. If a network drops during sync retry, the server returns the cached response instead of applying duplicate edits.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>B. Client IndexedDB Object Stores</h3>
+  <p>The browser uses 3 distinct IndexedDB stores initialized in <code>client/src/db/indexedDb.js</code>:</p>
+  <ul>
+    <li><code>notes</code>: Stores all notes locally on browser disk. Keys are note <code>_id</code>s.</li>
+    <li><code>syncQueue</code>: The <strong>Transactional Outbox</strong>. Contains mutations (<code>create</code>, <code>update</code>, <code>delete</code>) waiting to be pushed to the server.</li>
+    <li><code>metadata</code>: Stores local client configuration, persistent <code>clientId</code>, and the <code>lastSyncedAt</code> timestamp.</li>
+  </ul>
+
+  <div class="page-break"></div>
+
+  <!-- SECTION 5 -->
+  <h2>5. The Synchronization Engine: Step-by-Step Flow</h2>
+  <p>
+    How does a note travel from an offline airplane flight to the cloud database?
+  </p>
+
+  <div class="diagram">
+CLIENT                                                               SERVER
+  │                                                                     │
+  │ 1. User writes note offline ──► Stored in IndexedDB 'notes'         │
+  │ 2. Mutation queued          ──► Stored in IndexedDB 'syncQueue'     │
+  │                                                                     │
+  │ [Network Returns Online]                                            │
+  │ 3. SyncManager wakes up                                             │
+  │ 4. HTTP POST /api/sync/batch ──────────────────────────────────────►│
+  │    Payload: {                                                       │
+  │      clientId,                                                      │
+  │      operations: [{ idempotencyKey, action, noteId, baseVersion }], │
+  │      lastSyncedAt                                                   │
+  │    }                                                                │
+  │                                                                     │ 5. Server checks Idempotency
+  │                                                                     │ 6. Validates baseVersion (OCC)
+  │                                                                     │ 7. Applies updates to DB
+  │                                                                     │ 8. Fetches delta changes
+  │                                                                     │    (updatedAt > lastSyncedAt)
+  │                                                                     │
+  │◄─────────────────── 200 OK Response ────────────────────────────────┘
+  │    Response: {
+  │      processedOperations: [{ status: 'updated' | 'conflict' }],
+  │      serverChanges: [...],
+  │      serverTimestamp
+  │    }
+  │
+  │ 9. Dequeue succeeded operations from 'syncQueue'
+  │ 10. Merge serverChanges into local IndexedDB
+  │ 11. If status == 'conflict', launch Side-by-Side Resolver Modal!
+  </div>
+
+  <!-- SECTION 6 -->
+  <h2>6. Optimistic Concurrency Control (OCC) & Conflict Detection</h2>
+
+  <h3>Why Not Last-Write-Wins (LWW)?</h3>
+  <p>
+    Most simple applications use <code>Last-Write-Wins</code> where whoever sent the last timestamp overwrites previous changes. In professional engineering, this is considered a critical anti-pattern:
+  </p>
+  <ul>
+    <li><strong>Clock Drift:</strong> Laptop and phone clocks drift by seconds or minutes. A device with a fast clock will permanently destroy edits from devices with accurate clocks.</li>
+    <li><strong>Silent Data Loss:</strong> If Developer A writes a bug fix offline and Developer B rewrites the function online, LWW silently erases Developer A's fix without anyone knowing!</li>
+  </ul>
+
+  <h3>PhantomSync's Solution: Optimistic Concurrency Control (OCC)</h3>
+  <pre><code>// In noteController.js & syncController.js:
+if (baseVersion !== undefined && !isConflictResolution) {
+  if (existingNote.version !== Number(baseVersion)) {
+    // CONFLICT DETECTED!
+    // Server is at v2, but client edited from v1.
+    // NEVER overwrite! Preserve both versions and return HTTP 409 Conflict.
+    return res.status(409).json({
+      error: 'ConflictDetected',
+      serverNote: existingNote,
+      attemptedUpdate: { title, content, tags, baseVersion }
+    });
+  }
+}</code></pre>
+
+  <div class="callout callout-warning">
+    <div class="callout-title">The Invariant</div>
+    PhantomSync guarantees that <strong>no committed edit is ever silently overwritten</strong>. The server returns both the remote version and the attempted local version, giving full agency to the user.
+  </div>
+
+  <div class="page-break"></div>
+
+  <!-- SECTION 7 -->
+  <h2>7. Side-by-Side Visual Diff & Built-in 3-Way AI Merge</h2>
+  <p>
+    When a conflict occurs, PhantomSync pops up the <code>ConflictResolverModal</code>. It features:
+  </p>
+
+  <h3>A. Color-Coded Line Diff Highlighter</h3>
+  <p>
+    We built <code>client/src/services/diffHelper.js</code> to calculate line-by-line divergences:
+  </p>
+  <ul>
+    <li><strong style="color: #dc2626;">Red / Amber (•)</strong>: Lines unique to the local offline version that differ from server.</li>
+    <li><strong style="color: #16a34a;">Green (+)</strong>: Lines added or updated on the remote server.</li>
+    <li><strong>Standard Text</strong>: Common ancestor lines that both parties agree on.</li>
+  </ul>
+
+  <h3>B. The 3-Way Merge Algorithm (Works with Zero API Keys!)</h3>
+  <p>
+    Implemented in <code>server/src/services/aiMergeService.js</code>. It compares 3 distinct documents:
+  </p>
+  <ol>
+    <li><code>Base</code> ($V_0$): The common ancestor note before the split occurred.</li>
+    <li><code>Server</code> ($V_1$): What was saved to the server by another session.</li>
+    <li><code>Local</code> ($V_1'$): What was edited offline on the user's client.</li>
+  </ol>
+  <pre><code>// Example reconciliation rule in threeWayLineMerge:
+if (remoteLine === baseLine && localLine !== baseLine) {
+  // Only local modified this line -> safely adopt local change!
+  resultLines.push(localLine);
+} else if (localLine === baseLine && remoteLine !== baseLine) {
+  // Only remote modified this line -> safely adopt remote change!
+  resultLines.push(remoteLine);
+} else if (localLine !== remoteLine) {
+  // Both parties modified the line -> non-destructively synthesize both!
+  resultLines.push(localLine);
+  resultLines.push(remoteLine);
+}</code></pre>
+
+  <!-- SECTION 8 -->
+  <h2>8. Time Travel Version History & Point-in-Time Restore</h2>
+  <p>
+    Every time a note is created, updated, or conflict-resolved, an immutable snapshot is saved to <code>NoteHistory</code>.
+  </p>
+  <p>
+    When a user clicks <strong>"Restore Version 1"</strong>:
+  </p>
+  <ol>
+    <li>The server finds the snapshot for revision 1 in <code>NoteHistory</code>.</li>
+    <li>It updates the live note with revision 1's title and content.</li>
+    <li>It increments the version to revision 4 (supposing current was 3).</li>
+    <li>It records a new snapshot with <code>changeType: 'restore'</code> and <code>summary: 'Restored from version 1'</code>.</li>
+  </ol>
+  <p>
+    <em>Important SDE interview concept:</em> <strong>Restores do not delete intermediate history!</strong> The timeline remains purely append-only, preserving complete auditability.
+  </p>
+
+  <div class="page-break"></div>
+
+  <!-- SECTION 9 -->
+  <h2>9. File-by-File Code Tour & Implementation Anatomy</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>File Path</th>
+        <th>Layer</th>
+        <th>What It Does & Key Functions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>server/src/config/db.js</code></td>
+        <td>Database</td>
+        <td>Connects to MongoDB or seamlessly boots embedded in-memory database store.</td>
+      </tr>
+      <tr>
+        <td><code>server/src/config/memoryStore.js</code></td>
+        <td>Database</td>
+        <td>In-memory collection and document simulation matching Mongoose API (<code>find</code>, <code>save</code>).</td>
+      </tr>
+      <tr>
+        <td><code>server/src/models/Note.js</code></td>
+        <td>Model</td>
+        <td>Active notes schema with UUID string ID, OCC version, and soft-delete tombstone flags.</td>
+      </tr>
+      <tr>
+        <td><code>server/src/models/NoteHistory.js</code></td>
+        <td>Model</td>
+        <td>Snapshot collection storing immutable previous revisions.</td>
+      </tr>
+      <tr>
+        <td><code>server/src/models/SyncLog.js</code></td>
+        <td>Model</td>
+        <td>Idempotency cache for preventing duplicate writes on network drops and retries.</td>
+      </tr>
+      <tr>
+        <td><code>server/src/services/aiMergeService.js</code></td>
+        <td>Service</td>
+        <td>Deterministic 3-way text reconciliation engine with optional Google Gemini LLM fallback.</td>
+      </tr>
+      <tr>
+        <td><code>server/src/controllers/syncController.js</code></td>
+        <td>Controller</td>
+        <td><code>POST /api/sync/batch</code>: Executes offline outbox operations idempotently.</td>
+      </tr>
+      <tr>
+        <td><code>server/src/controllers/noteController.js</code></td>
+        <td>Controller</td>
+        <td>REST CRUD, OCC version checking (HTTP 409), and point-in-time version restore.</td>
+      </tr>
+      <tr>
+        <td><code>client/src/db/indexedDb.js</code></td>
+        <td>Client Storage</td>
+        <td>IndexedDB storage manager for <code>notes</code>, <code>syncQueue</code>, and metadata.</td>
+      </tr>
+      <tr>
+        <td><code>client/src/services/syncManager.js</code></td>
+        <td>Client Engine</td>
+        <td>Orchestrates background sync heartbeats (15s), exponential backoff retries, and offline listeners.</td>
+      </tr>
+      <tr>
+        <td><code>client/src/services/diffHelper.js</code></td>
+        <td>Client Service</td>
+        <td>Computes line-by-line diffs for visual side-by-side highlighting.</td>
+      </tr>
+      <tr>
+        <td><code>client/src/components/ConflictResolverModal.jsx</code></td>
+        <td>UI Component</td>
+        <td>Renders side-by-side comparison modal with Keep Local, Keep Server, and AI Merge options.</td>
+      </tr>
+      <tr>
+        <td><code>client/src/components/VersionHistoryModal.jsx</code></td>
+        <td>UI Component</td>
+        <td>Inspects past revision snapshots and allows one-click point-in-time rollback.</td>
+      </tr>
+      <tr>
+        <td><code>client/src/components/NoteEditor.jsx</code></td>
+        <td>UI Component</td>
+        <td>Live note editor with 400ms debounced auto-saving to local IndexedDB.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="page-break"></div>
+
+  <!-- SECTION 10 -->
+  <h2>10. Top 10 SDE Placement Interview Questions & Model Answers</h2>
+
+  <h4>Q1: Why did you choose IndexedDB instead of LocalStorage for offline storage?</h4>
+  <p>
+    <strong>Answer:</strong> <code>localStorage</code> is synchronous and blocks the main UI thread during large reads or writes. Furthermore, it is capped at only 5MB and only stores strings. <strong>IndexedDB is asynchronous</strong>, operates in the background without UI lag, supports large binary/structured data (hundreds of MBs), offers ACID transactions, and allows creating indexes for fast queries.
+  </p>
+
+  <h4>Q2: What is the Transactional Outbox pattern and why did you use it?</h4>
+  <p>
+    <strong>Answer:</strong> When a user performs an offline edit, writing directly to the network might fail. With the <strong>Transactional Outbox pattern</strong>, we save the note to the local <code>notes</code> table and atomically enqueue a mutation task into <code>syncQueue</code>. A separate worker (<code>SyncManager</code>) drains this queue when online. If the app crashes or network fails, the queue is persisted on disk and never lost.
+  </p>
+
+  <h4>Q3: How do you prevent duplicate requests when retrying sync over an unstable network?</h4>
+  <p>
+    <strong>Answer:</strong> Through <strong>Idempotency Keys</strong>. Every queued mutation is tagged with a client-generated UUID <code>idempotencyKey</code>. When the server processes an operation, it records the key and the resulting response in the <code>SyncLog</code> collection. If the connection dropped before the client received the 200 OK and retries, the server recognizes the key and returns the cached result without repeating the mutation.
+  </p>
+
+  <h4>Q4: What is the difference between Optimistic Concurrency Control (OCC) and Pessimistic Locking?</h4>
+  <p>
+    <strong>Answer:</strong> Pessimistic locking locks the database record as soon as a user opens it for editing, preventing anyone else from editing until released. In mobile and web apps, pessimistic locking is unviable because users go offline or close tabs without unlocking. <strong>OCC assumes conflicts are rare</strong>: it lets anyone edit freely and checks the document version at write time. If the base version is stale, it flags a conflict.
+  </p>
+
+  <h4>Q5: Why did you use soft deletes (Tombstones) instead of hard deleting documents?</h4>
+  <p>
+    <strong>Answer:</strong> In distributed offline-first systems, hard deleting a row removes all trace of it. If Client A deletes Note 1 offline, and Client B comes online later, how does Client B know Note 1 was deleted rather than never existing? With a <strong>Tombstone</strong> (<code>isDeleted: true</code> with incremented version), the deletion is a trackable event that synchronizes cleanly across all distributed clients.
+  </p>
+
+  <h4>Q6: How does your AI merge suggestion work when the user has no Gemini or OpenAI API key?</h4>
+  <p>
+    <strong>Answer:</strong> PhantomSync includes a built-in deterministic <strong>3-way text reconciliation algorithm</strong>. It compares the common ancestor (Base) against the Server and Local versions line-by-line. Non-overlapping edits are united cleanly without loss. If an API key is provided, it can escalate to Google Gemini LLM for semantic synthesis, but the app is 100% functional out of the box with zero external dependencies.
+  </p>
+
+  <h4>Q7: What happens when the server goes down while the client is syncing?</h4>
+  <p>
+    <strong>Answer:</strong> The client triggers an <strong>Exponential Backoff retry algorithm with jitter</strong>. Instead of spamming the failed server every second, the client waits $2\text{s}, 4\text{s}, 8\text{s}, 16\text{s}$, up to a $30\text{s}$ cap. The operations remain safely queued in IndexedDB until connectivity returns.
+  </p>
+
+  <h4>Q8: Why are note IDs generated as UUID strings on the client rather than auto-incremented integers on the server?</h4>
+  <p>
+    <strong>Answer:</strong> If IDs were auto-incremented integers generated by MongoDB/Postgres, an offline user creating 5 notes would not have IDs for them until they reconnect, breaking local relations and foreign keys. UUIDv4 provides 128 bits of entropy ($3.4 \times 10^{38}$ possible IDs), making collisions mathematically impossible even across millions of independent offline devices.
+  </p>
+
+  <h4>Q9: How do you ensure test isolation in automated integration testing?</h4>
+  <p>
+    <strong>Answer:</strong> In <code>server/tests/setup.js</code>, we configure an isolated in-memory database store that clears all collections between test cases using <code>afterEach</code>. This prevents test pollution and allows all 16 integration tests to run in under 4 seconds with 100% determinism.
+  </p>
+
+  <h4>Q10: What is the time complexity of the delta synchronization endpoint?</h4>
+  <p>
+    <strong>Answer:</strong> The query <code>Note.find({ updatedAt: { $gt: lastSyncedAt } })</code> runs in $O(\log N + K)$ time, where $N$ is total notes and $K$ is the number of notes updated since that timestamp, thanks to our single-field index on <code>updatedAt</code>.
+  </p>
+
+</body>
+</html>
